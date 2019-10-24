@@ -1,0 +1,62 @@
+@import "./variables";
+
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size:16px;
+	background: #f0f0f0;
+	color:$black2;
+}
+
+.container{
+	main{
+		@include col-ct;
+		padding: 0 2em;
+		form{
+			margin: 2em 0;
+			.head{
+			    background: $green;
+			    color: white;
+			    padding: 1em;
+			}
+			.content{
+				background: $white;
+				padding: 1em;
+				@include col-ct;
+				.cont{
+					@include row-ct;
+					margin: 1em;
+					p{
+						margin:0 1em;
+					}
+				}
+				.resumen{
+
+					@include col-ct;
+				    background: $orange;
+				    padding: 1em;
+				    border-radius: 2px;
+				    display: none;
+				    h3{
+				    	font-size: 2rem;
+				    	color:$white;
+				    }
+				}
+				.total{
+				    padding: 1em;
+				    border-radius: 2px;
+					@include col-ct;
+					background: $green;
+					display: none;
+				}
+			}
+		}
+	}	
+}
+
+
+footer{
+	background: $white;
+	width: 100%;
+	padding: 1.5em;
+	@include row-ct;
+}

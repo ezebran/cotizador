@@ -1,54 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Formulario from './components/Formulario';
+import {obtenerDiferenciaAnio, calcularMarca, obtenerPlan} from './helper';
 
-function App() {
-  return (
-    <div>
-    <main>
-      <form>
-        <div className="head">
-          <h1>Cotizador de autos</h1>
-        </div>
-        <div className="content">
 
-          <div className="cont">
-            <p>Marca</p>
-            <select name="" id="">
-              <option value="1">Ejemplo</option>
-              <option value="2">Coso</option>
-            </select>
-          </div>
-          
-          <div className="cont">
-            <p>Año</p>
-            <select name="" id="">
-              <option value="1">2018</option>
-              <option value="2">2017</option>
-            </select>
-          </div>
+class App extends Component {
 
-          <div className="cont">
-            <p>Plan</p>
-            <label><input type="checkbox" />Basico</label>
-            <label><input type="checkbox" />Completo</label>
-          </div>
-          <input type="submit" value="COTIZAR" className="btn btn-active" />
-          <div className="cont resumen">
-            <h3>Resumen de cotización</h3>
-            <p>Marca: Asiatico</p>
-            <p>Plan: Completo</p>
-            <p>Año del auto: 2018</p> 
-          </div>
+  cotizarSeguro = (datos) => {
 
-          <div className="cont total">El total es $1245</div>
-        </div>
-      </form>
+    const {marca, year, plan} = datos;
 
-    </main>
-    <footer>
-      <p>Desarrollado por <a href="http://ezebran.github.io/portafolio" target="blank">Ezequiel Brandan</a></p>
-    </footer>
-  </div>
-  );
+    let resultado = 2000;
+
+    const diferencia = obtenerDiferenciaAnio(year);
+
+    resultado -= ((diferencia * 3) * resultado) / 100;
+
+    resultado = calcularMarca(marca) * resultado;
+
+    let incrementoPlan = obtenerPlan(plan);
+
+    resultado = parseFloat( incrementoPlan * resultado).toFixed(2);
+
+    let datosAuto = {marca, year, plan}
+
+    this.setState({
+      resultado: resultado,
+      datos: datosAuto
+    })
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <main>
+          <Header 
+            titulo = 'Cotizador de autos'
+          />
+
+          <Formulario
+            cotizarSeguro = {this.cotizarSeguro}
+          />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
 }
 
 export default App;
