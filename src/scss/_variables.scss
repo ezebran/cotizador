@@ -38,6 +38,16 @@
 	align-items:center;
 }
 
+@mixin col-bt{
+	display: flex;
+	display:-webkit-flex;
+	display:-moz-flex;
+	display:-o-flex;
+	flex-flow:wrap column;
+	justify-content: space-between;
+	align-items:center;
+}
+
 @mixin col-end{
 	display: flex;
 	display:-webkit-flex;

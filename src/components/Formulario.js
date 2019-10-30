@@ -20,7 +20,7 @@ class Formulario extends Component {
 
 		this.props.cotizarSeguro(datos);
 
-		e.currentTarget.reset();
+		// e.currentTarget.reset();
 	}
 
 	render() {
@@ -58,14 +58,6 @@ class Formulario extends Component {
 	            <label><input type="radio" name="plan" value="completo" ref={this.planCompletoRef} />Completo</label>
 	          </div>
 	          <input type="submit" value="COTIZAR" className="btn btn-active" />
-	          <div className="cont resumen">
-	            <h3>Resumen de cotización</h3>
-	            <p>Marca: Asiatico</p>
-	            <p>Plan: Completo</p>
-	            <p>Año del auto: 2018</p> 
-	          </div>
-
-	          <div className="cont total">El total es $1245</div>
 	        </div>
 	      </form>
 		)
