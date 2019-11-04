@@ -32,6 +32,22 @@ body{
 					p{
 						margin:0 1em;
 					}
+					label{
+					    
+					    padding: 0.5em 1em;
+					    border-radius: 3px;
+					    color: white;
+					    margin:0.25em;
+					    input{
+					    	margin-right: 0.25em;
+					    }
+					}
+					.basico{
+						background: $violet;
+					}
+					.completo{
+						background: $green;
+					}
 				}
 			}
 		}
@@ -72,3 +88,5 @@ footer{
 	padding: 1.5em;
 	@include row-ct;
 }
+
+@import "./responsive";

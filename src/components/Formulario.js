@@ -54,8 +54,8 @@ class Formulario extends Component {
 
 	          <div className="cont">
 	            <p>Plan</p>
-	            <label><input type="radio" name="plan" value="basico" ref={this.planBasicoRef} />Basico</label>
-	            <label><input type="radio" name="plan" value="completo" ref={this.planCompletoRef} />Completo</label>
+	            <label className="basico"><input type="radio" name="plan" value="basico" ref={this.planBasicoRef} />Basico</label>
+	            <label className="completo"><input type="radio" name="plan" value="completo" ref={this.planCompletoRef} />Completo</label>
 	          </div>
 	          <input type="submit" value="COTIZAR" className="btn btn-active" />
 	        </div>

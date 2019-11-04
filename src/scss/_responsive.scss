@@ -1,5 +1,23 @@
 @media screen and (max-width: 415px){ //To mobile
-	
+	.container{
+		main{
+			.head{
+				h1{
+					font-size: 2.5rem;
+				}
+			}
+			form{
+				.content{
+					.btn{
+					    font-weight: 700;
+					    font-size: 1rem;
+					    width: 80%;
+					    padding: 1rem 0;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 926px) and (min-width: 415px){ //To Tablet
